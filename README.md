@@ -1,25 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Property-Management-Rails
 
-Things you may want to cover:
+This is originally a React app that I'm building in Rails. It is a sample product for a management app
+that will be used for apartment building news and any repair requests.
 
-* Ruby version
+The App Contains:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Property-Management-Rails
+- Newsletters that contain general information for the residents, and any announcments.
+- Archive of old newsletters
+- Repair or inspection request form so that tenants can request specific actions from the management.
+- More to be added....
