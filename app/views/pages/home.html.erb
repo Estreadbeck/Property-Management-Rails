@@ -1,1 +1,13 @@
-<div>This is the Homepage</div>
+<hr>
+<h3>This is the Homepage</h3>
+<div class="homepage-wrapper">
+  <div class="sidebar">
+    <div class="latest-date"><%= @latest.created_at.strftime("%F") %></div>
+    <div class="archive"><%= render "archive.html.erb" %></div>
+  </div>
+
+  <div class="content">
+    <div><%= render "latest.html.erb" %></div>
+  </div>
+
+</div>

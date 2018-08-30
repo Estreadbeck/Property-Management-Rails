@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <%= render "shared/header.html.erb" %>
-    <%= yield %>
+    <div class="site-wrapper">
+        <%= render "shared/header.html.erb" %>
+        <%= yield %>
+    </div>
   </body>
 </html>
