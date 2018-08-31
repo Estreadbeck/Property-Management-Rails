@@ -1,8 +1,8 @@
 <h3>This is the Homepage</h3>
-<div class="homepage-wrapper">
+<div class="mainpage-wrapper">
   <div class="sidebar">
-    <div class="latest-date"><%= @latest.created_at.strftime("%F") %></div>
-    <div class="archive"><%= render "archive.html.erb" %></div>
+    <div class="newsletter-date"><%= @latest.created_at.strftime("%F") %></div>
+    <div class="archive"><%= render "shared/archive.html.erb" %></div>
   </div>
 
   <div class="content">

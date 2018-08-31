@@ -1,9 +1,12 @@
 
-<div class="latest">
+<div class="newsletter">
 
-  <div><%= image_tag @latest.image, class: "latest__img" %></div>
+  <div class="img-wrapper">
+    <%= image_tag @latest.image, class: "newsletter__img" %>
+    <h3 class="newsletter__title"><%= @latest.title %></h3>
+  </div>
 
-  <h3 class="latest__title"><%= @latest.title %></h3>
+  <p class="newsletter__body"><%= @latest.body %></p>
 
-  <p class="latest__body"><%= @latest.body %></p>
+  <%= link_to 'Edit', edit_newsletter_path(@latest) %>
 </div>

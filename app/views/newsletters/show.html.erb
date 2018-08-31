@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="mainpage-wrapper">
 
-<p>
-  <strong>Title:</strong>
-  <%= @newsletter.title %>
-</p>
+  <div class="sidebar">
+      <div class="newsletter-date"><%= @newsletter.created_at.strftime("%F") %></div>
+      <div class="archive"><%= render 'shared/archive.html.erb' %></div>
+  </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @newsletter.body %>
-</p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @newsletter.image %>
-</p>
+  <div class="content">
+    <div class="newsletter">
 
-<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
-<%= link_to 'Back', newsletters_path %>
+      <div class="img-wrapper">
+        <%= image_tag @newsletter.image, class: "newsletter__img" %>
+        <h3 class="newsletter__title"><%= @newsletter.title %></h3>
+      </div>
+        <p class="newsletter__body"><%= @newsletter.body %></p>
+
+        <%= link_to 'Edit', edit_newsletter_path(@newsletter) %>
+      </div>
+  </div>
+</div>
