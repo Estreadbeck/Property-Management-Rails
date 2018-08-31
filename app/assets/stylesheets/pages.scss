@@ -45,6 +45,10 @@
   grid-row: date-s/date-e;
   align-self: center;
   justify-self: center;
+
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 4rem 2.5rem;
 }
 
 .latest {
@@ -73,6 +77,7 @@
 
   &__body {
     grid-row: body-s/body-e;
+    align-self: start;
   }
 
 }
