@@ -4,13 +4,13 @@ class NewslettersController < ApplicationController
   # GET /newsletters
   # GET /newsletters.json
   def index
-    @newsletters = Newsletter.all
+    @newsletters = Newsletter.recent.all
   end
 
   # GET /newsletters/1
   # GET /newsletters/1.json
   def show
-    @newsletters = Newsletter.all
+    @newsletters = Newsletter.recent.all
   end
 
   # GET /newsletters/new
@@ -65,7 +65,7 @@ class NewslettersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_newsletter
-      @newsletter = Newsletter.find(params[:id])
+      @newsletter = Newsletter.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

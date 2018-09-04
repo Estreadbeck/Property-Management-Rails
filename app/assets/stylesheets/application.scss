@@ -16,6 +16,17 @@
 
 body {
   background-color: lightgray;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  letter-spacing: 1px;
+
 }
 
 .site-wrapper {
@@ -92,7 +103,6 @@ body {
     grid-row: img-s/img-e;
     position: relative;
     text-align: center;
-    color: white;
     background-color: black;
     border-radius: 5px;
   }
@@ -101,6 +111,11 @@ body {
     width: 100%;
     opacity: 0.8;
     border-radius: 5px;
+    height: 100%;
+    margin-bottom: -5px;
+    border: 1px solid black;
+    margin-right: 5px;
+
   }
 
   &__title {
@@ -108,7 +123,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    text-decoration: none;
+    transition: 0.3s;
   }
 
   &__body {
@@ -116,6 +132,31 @@ body {
     align-self: start;
   }
 
+}
+
+.newsletter-link a {
+  color: #d9d9d9;
+}
+
+.newsletter-link a:hover {
+  color: #fff;
+}
+
+.newsletter-edit {
+  position: absolute;
+  bottom: 16px;
+  right: 32px;
+}
+
+.button-small {
+  border: 1px solid #d9d9d9;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.button-small:hover {
+  background-color: rgba(255,255,255,0.2);
+  color: black;
 }
 
 .newsletter-date {

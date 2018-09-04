@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @newsletters = Newsletter.all
+    @newsletters = Newsletter.recent.all
     # @newsletter = Newsletter.find(params[:id])
     @latest = Newsletter.last
   end

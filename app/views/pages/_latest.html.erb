@@ -3,10 +3,10 @@
 
   <div class="img-wrapper">
     <%= image_tag @latest.image, class: "newsletter__img" %>
-    <h3 class="newsletter__title"><%= @latest.title %></h3>
+    <h3 class="newsletter__title newsletter-link"><%= link_to @newsletter.title, newsletter_path(@newsletter) %></h3>
+    <div class="newsletter-edit newsletter-link"><%= link_to 'Edit', edit_newsletter_path(@latest), class: "button-small" %></div>
   </div>
 
   <p class="newsletter__body"><%= @latest.body %></p>
 
-  <%= link_to 'Edit', edit_newsletter_path(@latest) %>
 </div>
