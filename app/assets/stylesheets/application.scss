@@ -98,15 +98,6 @@ a:hover {
   grid-template-rows: [img-s] 2fr [img-e body-s] 3fr [body-e];
   grid-template-columns: 1fr;
 
-
-  .img-wrapper{
-    grid-row: img-s/img-e;
-    position: relative;
-    text-align: center;
-    background-color: black;
-    border-radius: 5px;
-  }
-
   &__img {
     width: 100%;
     opacity: 0.8;
@@ -134,6 +125,14 @@ a:hover {
 
 }
 
+.img-wrapper{
+  grid-row: img-s/img-e;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  border-radius: 5px;
+}
+
 .newsletter-link a {
   color: #d9d9d9;
 }
@@ -142,20 +141,28 @@ a:hover {
   color: #fff;
 }
 
-.newsletter-edit {
+.newsletter-btn-one {
   position: absolute;
   bottom: 16px;
-  right: 32px;
+  right: 7.5em;
+}
+
+.newsletter-btn-two {
+  position: absolute;
+  bottom: 16px;
+  right: 1em;
 }
 
 .button-small {
   border: 1px solid #d9d9d9;
+  background-color: rgba(255,255,255,0.3);
   padding: 5px 15px;
   border-radius: 10px;
+  font-size: 10px;
 }
 
 .button-small:hover {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.4);
   color: black;
 }
 
@@ -167,4 +174,15 @@ a:hover {
   border: 1px solid black;
   border-radius: 7px;
   padding: 4rem 2.5rem;
+}
+
+.newsletter-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-index > .img-wrapper {
+  width: 66%;
+  margin-bottom: 10px;
 }

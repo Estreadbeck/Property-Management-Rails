@@ -12,7 +12,8 @@
       <div class="img-wrapper">
         <%= image_tag @newsletter.image, class: "newsletter__img" %>
         <h3 class="newsletter__title newsletter-link"><%= link_to @newsletter.title, newsletter_path(@newsletter) %></h3>
-        <div class="newsletter-edit newsletter-link"><%= link_to 'Edit', edit_newsletter_path(@newsletter), class: "button-small" %></div>
+        <div class="newsletter-btn-one newsletter-link"><%= link_to 'Edit', edit_newsletter_path(@newsletter), class: "button-small" %></div>
+        <div class="newsletter-btn-two newsletter-link"><%= link_to 'Delete', @newsletter, method: :delete, data: { confirm: 'Are you sure?' }, class: "button-small" %></div>
       </div>
         <p class="newsletter__body"><%= @newsletter.body %></p>
 
