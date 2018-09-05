@@ -14,14 +14,19 @@
  *= require_self
  */
 
+$color-red: #911212;
+
+
 body {
   background-color: lightgray;
   margin-top: 0;
+  color: $color-red;
 }
 
 a {
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.2s;
+  color: $color-red;
 }
 
 a:hover {
@@ -47,6 +52,16 @@ a:hover {
   text-align: center;
 }
 
+.nav-link {
+  display: inline-block;
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+.nav-link a {
+  padding: 5px;
+}
+
 .mainpage-wrapper {
   display: grid;
   grid-template-columns: [sidebar-s] 1fr [sidebar-e content-s] 3fr [content-e];
@@ -64,6 +79,10 @@ a:hover {
 .content {
   grid-column: content-s/content-e;
 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: [button-s] 40px [button-e newsletter-s] 5fr [newsletter-e];
+
 }
 
 .archive {
@@ -77,20 +96,30 @@ a:hover {
   /*text-align: center;*/
 
   &__header {
+    font-size: 16px;
+    font-weight: 600;
   }
 
   &__title {
-
+    font-size: 14px;
   }
 
   &__date {
-
+    font-size: 12px;
+    color: black;
   }
 
 }
 
+.button-new {
+  grid-row: button-s/button-e;
+  justify-self: end;
+  align-self: center;
+}
+
 .newsletter {
-  grid-column: newsletter-s/newsletter-e;
+  grid-column: 1/-1;
+  grid-row: newsletter-s/newsletter-e;
   justify-content: start;
   align-items: center;
 
@@ -118,9 +147,14 @@ a:hover {
     transition: 0.3s;
   }
 
+  &__title a {
+    padding: 80px;
+  }
+
   &__body {
     grid-row: body-s/body-e;
     align-self: start;
+    color: black;
   }
 
 }
@@ -164,6 +198,8 @@ a:hover {
 .button-small:hover {
   background-color: rgba(0,0,0,0.4);
   color: black;
+  letter-spacing: 1px;
+
 }
 
 .newsletter-date {

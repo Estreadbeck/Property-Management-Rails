@@ -9,7 +9,8 @@
   </div>
 
   <div class="content">
-    <div><%= render "latest.html.erb" %></div>
+    <div class="button-small button-new"><%= link_to 'New', new_newsletter_path %></div>
+    <div class="newsletter-wrapper"><%= render "latest.html.erb" %></div>
   </div>
 
 </div>
