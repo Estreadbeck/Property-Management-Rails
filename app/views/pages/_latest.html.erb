@@ -8,6 +8,6 @@
     <div class="newsletter-btn-two newsletter-link"><%= link_to 'Delete', @latest, method: :delete, data: { confirm: 'Are you sure?' }, class: "button-small" %></div>
   </div>
 
-  <p class="newsletter__body"><%= @latest.body %></p>
+  <div class="newsletter__body"><%= markdown @latest.body %></div>
 
 </div>

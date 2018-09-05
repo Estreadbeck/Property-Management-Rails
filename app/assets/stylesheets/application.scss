@@ -155,14 +155,14 @@ a:hover {
 
 .button-small {
   border: 1px solid #d9d9d9;
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(0,0,0,0.3);
   padding: 5px 15px;
   border-radius: 10px;
   font-size: 10px;
 }
 
 .button-small:hover {
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(0,0,0,0.4);
   color: black;
 }
 
@@ -173,8 +173,48 @@ a:hover {
 
   border: 1px solid black;
   border-radius: 7px;
-  padding: 4rem 2.5rem;
+  padding: 3rem 0rem;
+  margin: 10px 0;
+  text-align: center;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  grid-template-columns: 1fr [date-s] 2fr [date-e arrow-s] 1fr [arrow-e];
+  grid-template-rows: [month-s] 1fr [month-e year-s] 1fr [year-e];
+  font-weight: 600;
+
+  &__date {
+    font-size: 1.5rem;
+    grid-column: date-s/date-e;
+    grid-row: month-s/month-e;
+    margin: 10px 5px;
+    align-self: end;
+  }
+
+  &__year {
+    font-size: 1rem;
+    grid-column: date-s/date-e;
+    grid-row: year-s/year-e;
+    align-self: end;
+  }
+
+  &__arrow {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    grid-column: arrow-s/arrow-e;
+    grid-row: 1/-1;
+    padding-right: 2rem;
+    padding-bottom: 2.4rem;
+    transform: translateX(22px) rotate(313deg);
+    background-color: #fff;
+
+  }
+
 }
+
+
 
 .newsletter-index {
   display: flex;
