@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <%= render "shared/header.html.erb" %>
-    <%= yield %>
+    <div class="layout-grid">
+        <div class="header-wrapper"><%= render "shared/header.html.erb" %></div>
+        <%= yield %>
+    </div>
   </body>
 </html>

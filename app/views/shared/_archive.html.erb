@@ -1,0 +1,9 @@
+
+<h4 class="archive__header">Newsletter Archive</h4>
+
+
+<% @newsletters.each do |newsletter| %>
+  <div class="archive__title"><%= link_to newsletter.title, newsletter %></div>
+  <div class="archive__date"><%= newsletter.created_at.strftime("%b %e, %Y") %></div>
+  <br>
+<% end %>

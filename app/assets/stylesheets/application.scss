@@ -1,0 +1,386 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome";
+@import "variables";
+
+$color-red: #911212;
+
+/*BASE STYLES*/
+html {
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+body {
+    /*font-family: $font-encode;*/
+    font-weight: 400;
+    color: $color-gray-4D;
+}
+
+.layout-grid {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: [page-s header-s] 13.6rem [header-e bar-s] auto [bar-e content-s] 1fr [content-e page-e];
+    grid-template-columns: [page-s] 14rem [content-s] 1fr [content-e] 14rem [page-e]
+}
+
+.bar {
+    height: 4rem;
+    background-color: $color-gray-D8;
+    grid-row: bar-s/bar-e;
+    grid-column: page-s/page-e;
+}
+
+
+/*HEADER STYLES*/
+
+.header {
+    grid-row: header-s/header-e;
+    grid-column: content-s/content-e;
+
+    display: grid;
+    grid-template-columns: [s] 1fr [e];
+    grid-template-rows: [title-s] 3rem [title-e sub-s] 2rem [sub-e];
+    
+    &__title {
+        grid-row: title-s/title-e;
+        grid-column: s/e;
+    }
+    &__subtitle {
+        grid-row: sub-s/sub-e;
+        grid-column: s/e;
+    }
+}
+
+.header {
+    padding-top: 4rem;
+    
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 3rem;
+    }
+    &__subtitle {
+        color: $color-red-BA;
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2rem;
+    }
+}
+
+/*NAV STYLES*/
+
+.tab-nav {
+    display: grid;
+    grid-template-rows: [tabs-s] 50px [tabs-e content-s] 1fr [content-e]; 
+
+    height: 100%;
+    &__tabs {
+        grid-row: tabs-s/tabs-e;
+
+        display: grid;
+        grid-template-rows: [s] 1fr [m] 1fr 1fr [e];
+        grid-template-columns: repeat(auto-fill, 1fr);
+        grid-auto-flow: column;
+        justify-items: center;
+        align-items: center;
+
+        justify-content: center;
+
+        grid-column-gap: 4.6rem;
+        border-bottom: 1px solid $color-gray-E6;
+    }   
+
+    &__tab {
+        grid-row: m/e;
+    
+        height: 100%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2rem;
+        text-align: center;
+        width: 9rem;
+        // padding-bottom: 2rem;
+        // border-bottom: 1px solid $color-red-BA;
+        border-bottom: 2px solid transparent;
+    }
+
+    .active {
+        color: $color-red-BA;
+        border-bottom: 2px solid $color-red-BA;
+    }
+}
+
+/*DASHBOARD*/
+.dashboard {
+    grid-row: content-s/content-e;
+    grid-column: content-s/content-e;
+}
+
+/*old styles*/
+a {
+  text-decoration: none;
+  transition: 0.2s;
+  color: $color-red;
+}
+
+a:hover {
+  letter-spacing: 1px;
+
+}
+
+.site-wrapper {
+  margin-left: 80px;
+  margin-right: 80px;
+  background-color: #fff;
+  padding: 10px;
+  top: 0px;
+  position: relative;
+}
+
+.header-wrapper {
+  padding-bottom: 5px;
+  border-bottom: 10px solid slategray;
+}
+
+.nav {
+  text-align: center;
+}
+
+.nav-link {
+  display: inline-block;
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+.nav-link a {
+  padding: 5px;
+}
+
+.mainpage-wrapper {
+  display: grid;
+  grid-template-columns: [sidebar-s] 1fr [sidebar-e content-s] 3fr [content-e];
+  grid-column-gap: 3rem; 
+}
+
+.sidebar {
+  grid-column: sidebar-s/sidebar-e;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: [date-s] 1fr [date-e archive-s] 3fr [archive-e]
+}
+
+.content {
+  grid-column: content-s/content-e;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: [button-s] 40px [button-e newsletter-s] 5fr [newsletter-e];
+
+}
+
+.archive {
+  grid-row: archive-s/archive-e;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-top: 1px solid black;
+  /*text-align: center;*/
+
+  &__header {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__title {
+    font-size: 14px;
+    padding-top: 5px;
+  }
+
+  &__date {
+    font-size: 12px;
+    color: black;
+  }
+
+}
+
+.button-new {
+  grid-row: button-s/button-e;
+  justify-self: end;
+  align-self: center;
+}
+
+.newsletter {
+  grid-column: 1/-1;
+  grid-row: newsletter-s/newsletter-e;
+  justify-content: start;
+  align-items: center;
+
+  display: grid;
+  grid-template-rows: [img-s] 2fr [img-e body-s] 3fr [body-e];
+  grid-template-columns: 1fr;
+
+  &__img {
+    width: 100%;
+    opacity: 0.8;
+    border-radius: 5px;
+    height: 100%;
+    margin-bottom: -5px;
+    border: 1px solid black;
+    margin-right: 5px;
+
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    transition: 0.3s;
+    text-shadow: -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000;
+  }
+
+  &__title a {
+    padding: 80px;
+  }
+
+  &__body {
+    grid-row: body-s/body-e;
+    align-self: start;
+    color: black;
+  }
+
+}
+
+.img-wrapper{
+  grid-row: img-s/img-e;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.newsletter-link a {
+  color: #d9d9d9;
+}
+
+.newsletter-link a:hover {
+  color: #fff;
+}
+
+.newsletter-btn-one {
+  position: absolute;
+  bottom: 16px;
+  right: 7.5em;
+}
+
+.newsletter-btn-two {
+  position: absolute;
+  bottom: 16px;
+  right: 1em;
+}
+
+.button-small {
+  border: 1px solid #d9d9d9;
+  background-color: rgba(0,0,0,0.3);
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.button-small:hover {
+  background-color: rgba(0,0,0,0.4);
+  color: black;
+  letter-spacing: 1px;
+
+}
+
+.newsletter-date {
+  grid-row: date-s/date-e;
+  align-self: center;
+  justify-self: center;
+
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 4rem 0rem;
+  margin: 10px 0;
+  text-align: center;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  grid-template-columns: 1fr [date-s] 2fr [date-e arrow-s] 1fr [arrow-e];
+  grid-template-rows: [month-s] 1fr [month-e year-s] 1fr [year-e];
+  font-weight: 600;
+
+  &__date {
+    font-size: 1.5rem;
+    grid-column: date-s/date-e;
+    grid-row: month-s/month-e;
+    margin: 10px 5px;
+    align-self: end;
+  }
+
+  &__year {
+    font-size: 1rem;
+    grid-column: date-s/date-e;
+    grid-row: year-s/year-e;
+    align-self: end;
+  }
+
+  &__arrow {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    grid-column: arrow-s/arrow-e;
+    grid-row: 1/-1;
+    transform: translateX(31px) rotate(315deg);
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+}
+
+}
+
+
+.newsletter-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-index > .img-wrapper {
+  width: 66%;
+  margin-bottom: 10px;
+}

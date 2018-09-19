@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :newsletters
   get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
+  get 'contact', to: 'pages#contact'
 
   root to: "pages#home"
 
