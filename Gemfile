@@ -59,3 +59,5 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'redcarpet', '~> 3.4'
 
 gem 'coderay', '~> 1.1', '>= 1.1.2'
+
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'

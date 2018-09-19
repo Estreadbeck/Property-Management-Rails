@@ -9,8 +9,8 @@
   </div>
 
   <div class="content">
-    <div class="button-small button-new"><%= link_to 'New', new_newsletter_path %></div>
-    <div class="newsletter-wrapper"><%= render "latest.html.erb" %></div>
+    <div class="button-small button-new"><%= link_to fa_icon('plus'), new_newsletter_path %></div>
+    <div><%= render "shared/newsletter-display.html.erb", newsletter: @latest %></div>
   </div>
 
 </div>
