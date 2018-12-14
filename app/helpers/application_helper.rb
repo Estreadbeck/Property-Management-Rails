@@ -3,15 +3,11 @@ module ApplicationHelper
     [
       {
         url: root_path,
-        title: 'Home'
+        title: 'Newsletters'
       },
       {
         url: contact_path,
         title: 'Contact Us'
-      },
-      {
-        url: newsletters_path,
-        title: 'Newsletters'
       },
     ]
   end

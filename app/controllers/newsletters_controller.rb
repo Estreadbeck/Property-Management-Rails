@@ -1,16 +1,18 @@
 class NewslettersController < ApplicationController
-  before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
+  before_action :set_newsletter, only: [:edit, :update, :destroy]
 
   # GET /newsletters
   # GET /newsletters.json
   def index
     @newsletters = Newsletter.recent.all
+
   end
 
   # GET /newsletters/1
   # GET /newsletters/1.json
   def show
     @newsletters = Newsletter.recent.all
+    @newsletter = Newsletter.last
   end
 
   # GET /newsletters/new
@@ -65,7 +67,7 @@ class NewslettersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_newsletter
-      @newsletter = Newsletter.friendly.find(params[:id])
+      p @newsletter = Newsletter.friendly.find(params[:id]) 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
